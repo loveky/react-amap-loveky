@@ -63,6 +63,7 @@ export interface MapProps {
   protocol?: string;
   amapkey?: string;
   version?: string;
+  hostAndPath?: string;
   useAMapUI?: boolean | Function;
   children?: any;
   onInstanceCreated?: Function;
