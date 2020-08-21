@@ -10,7 +10,7 @@ let mainPromise = null
 let amapuiPromise = null
 let amapuiInited = false
 export default class APILoader {
-  constructor({ key, useAMapUI, version, protocol }) {
+  constructor({ key, useAMapUI, version, protocol, hostAndPath }) {
     this.config = { ...DEFAULT_CONFIG, useAMapUI, protocol }
     if (typeof window !== 'undefined') {
       if (key) {
@@ -21,6 +21,9 @@ export default class APILoader {
     }
     if (version) {
       this.config.v = version
+    }
+    if (hostAndPath) {
+      this.config.hostAndPath = hostAndPath
     }
     this.protocol = protocol || window.location.protocol
     if (this.protocol.indexOf(':') === -1) {
