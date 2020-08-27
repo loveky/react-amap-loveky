@@ -176,7 +176,7 @@ class BaseMap extends Component<MapProps, {mapLoaded: boolean}> {
   }
 
   createInstance() {
-    if (!this.map) {
+    if (!this.map && this.mapWrapper) {
       const options = this.buildCreateOptions()
       this.map = new window.AMap.Map(this.mapWrapper, options)
       // install map plugins
