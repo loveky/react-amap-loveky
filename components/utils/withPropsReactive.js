@@ -14,7 +14,8 @@ function withPropsReactive(MapComponent) {
 
     onInstanceCreated() {
       if (!this.myMapComponent) {
-        this.needRunInstanceCreatedCallback;
+        this.needRunInstanceCreatedCallback = true;
+        return;
       }
 
       this.instanceCreated = true
